@@ -766,6 +766,37 @@ body{
   .back-top{right:14px;bottom:14px}
 }
 
+
+/* ===== KE8 Practice Arena ===== */
+.practice-wrap{max-width:1050px;margin:0 auto}
+.practice-hero{background:linear-gradient(135deg,#253e6b,#4f6fae);color:#fff;border-radius:22px;padding:28px;margin:18px 0 22px;box-shadow:0 12px 30px rgba(37,62,107,.16)}
+.practice-hero h2{margin:6px 0 8px;font-size:clamp(1.5rem,4vw,2.2rem)}
+.practice-hero p{margin:0;color:#e4ecf8;max-width:680px;line-height:1.65}
+.practice-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}
+.practice-stat,.practice-panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}
+.practice-stat strong{display:block;font-size:1.55rem;color:var(--deep);margin-top:4px}
+.practice-muted{color:var(--muted);font-size:.88rem}
+.practice-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.practice-btn{border:0;border-radius:11px;padding:11px 16px;background:var(--accent);color:#fff;font-weight:750;cursor:pointer}
+.practice-btn.secondary{background:var(--panel2);color:var(--deep);border:1px solid var(--line)}
+.practice-btn:disabled{opacity:.45;cursor:not-allowed}
+.practice-topline{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+.practice-progress{height:8px;background:var(--panel2);border-radius:20px;overflow:hidden;flex:1;min-width:120px}
+.practice-progress span{display:block;height:100%;width:0;background:var(--accent);transition:width .2s}
+.practice-question{font-size:1.12rem;font-weight:750;line-height:1.55;margin:18px 0}
+.practice-option{display:flex;gap:11px;align-items:flex-start;padding:13px;border:1px solid var(--line);border-radius:12px;margin:9px 0;cursor:pointer;background:var(--panel)}
+.practice-option:hover{border-color:var(--accent)}
+.practice-option input{margin-top:4px;accent-color:var(--accent)}
+.practice-option.selected{border-color:var(--accent);background:var(--blue-soft)}
+.practice-feedback{padding:14px;border-radius:12px;margin-top:14px;line-height:1.6;background:var(--panel2)}
+.practice-feedback.correct{border-left:4px solid var(--green)}
+.practice-feedback.wrong{border-left:4px solid var(--danger)}
+.practice-result{text-align:center;padding:26px 12px}
+.practice-result strong{font-size:2.7rem;color:var(--deep);display:block}
+.practice-timer{font-variant-numeric:tabular-nums;font-weight:850;color:var(--deep)}
+@media(max-width:650px){.practice-stats{grid-template-columns:1fr 1fr}.practice-stat:last-child{grid-column:span 2}.practice-hero{padding:22px}.practice-panel{padding:13px}}
+@media(prefers-reduced-motion:reduce){.practice-progress span{transition:none}}
+
 </style>
 </head>
 <body>
@@ -779,6 +810,7 @@ body{
       <button data-page="prep">Persiapan</button>
       <button data-page="syllabus">Silabus</button>
       <button data-page="archive">Arsip Soal</button>
+      <button data-page="practice">Practice Arena</button>
     </div>
   </nav>
 </header>
@@ -1121,6 +1153,29 @@ body{
   </div>
 </section>
 
+
+<section id="practice" class="page">
+  <div class="practice-wrap">
+    <div class="section-head">
+      <div><div class="kicker">Practice & Progress</div><h2>Practice Arena</h2><p>Latihan singkat untuk menguji pemahaman konsep ekonomi. Kerjakan, evaluasi, lalu ulangi untuk meningkatkan hasil.</p></div>
+    </div>
+    <div class="practice-hero">
+      <div class="kicker" style="color:#dbe6f6">KE8 • ECONOMICS TRAINING</div>
+      <h2>Uji pemahamanmu.</h2>
+      <p>Lima soal pilihan ganda dengan batas waktu 10 menit. Setiap jawaban dilengkapi pembahasan agar latihanmu bukan sekadar mengejar skor.</p>
+      <div class="practice-actions"><button class="practice-btn" id="practiceStart">Mulai latihan</button><span class="practice-muted" style="color:#e4ecf8;align-self:center">5 soal · 10 menit · pembahasan langsung</span></div>
+    </div>
+    <div class="practice-stats">
+      <div class="practice-stat"><span class="practice-muted">Latihan selesai</span><strong id="practiceAttempts">0</strong></div>
+      <div class="practice-stat"><span class="practice-muted">Skor terbaik</span><strong id="practiceBest">0%</strong></div>
+      <div class="practice-stat"><span class="practice-muted">Jawaban benar total</span><strong id="practiceCorrect">0</strong></div>
+    </div>
+    <div class="practice-panel" id="practiceStage">
+      <div class="practice-result"><strong>Siap mulai?</strong><p class="practice-muted">Tekan tombol “Mulai latihan” untuk membuka sesi pertamamu. Progres tersimpan di perangkat ini.</p></div>
+    </div>
+  </div>
+</section>
+
 <footer class="footer">
   <strong>TIM OSN EKONOMI SMADELTA</strong> • Belajar terstruktur, berlatih konsisten, berkembang bersama.
 </footer>
@@ -1209,18 +1264,22 @@ function openLink(key){
     showToast("Link " + key + " belum diisi. Edit bagian LINKS di file HTML.");
   }
 }
-function go(page){
-  document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
+function go(page, updateHash=true){
   const target=document.getElementById(page);
-  if(target) target.classList.add("active");
+  if(!target || !target.classList.contains("page")) return;
+  document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
+  target.classList.add("active");
   document.querySelectorAll(".navlinks button").forEach(x=>x.classList.remove("active"));
   const nav=document.querySelector('[data-page="'+page+'"]');
   if(nav) nav.classList.add("active");
+  if(updateHash && location.hash !== "#"+page) history.replaceState(null,"","#"+page);
   window.scrollTo({top:0,behavior:"smooth"});
 }
 document.querySelectorAll(".navlinks button").forEach(btn=>{
   btn.addEventListener("click",()=>go(btn.dataset.page));
 });
+if(location.hash && document.querySelector(location.hash+".page")) go(location.hash.slice(1),false);
+window.addEventListener("hashchange",()=>{const page=location.hash.slice(1);if(document.getElementById(page)?.classList.contains("page"))go(page,false)});
 document.querySelectorAll(".node").forEach(node=>{
   node.addEventListener("click",e=>{
     if(e.target.closest("a")) return;
@@ -1314,6 +1373,45 @@ function filterList(input,id){
       }
     }
   };
+})();
+
+
+/* ===== KE8 Practice Arena logic ===== */
+(function(){
+  const questions=[
+    {q:"Ketika harga suatu barang naik, jumlah barang yang diminta konsumen cenderung turun, dengan asumsi faktor lain tetap. Pernyataan ini menggambarkan …",o:["Hukum penawaran","Hukum permintaan","Biaya peluang","Elastisitas silang"],a:1,e:"Hukum permintaan menyatakan hubungan negatif antara harga dan jumlah yang diminta, ceteris paribus."},
+    {q:"Jika pemerintah menetapkan harga maksimum di bawah harga keseimbangan pasar, dampak yang paling mungkin terjadi adalah …",o:["Surplus barang","Kekurangan barang","Keseimbangan baru tanpa perubahan","Penawaran meningkat tanpa batas"],a:1,e:"Harga maksimum yang mengikat membuat jumlah yang diminta lebih besar daripada jumlah yang ditawarkan sehingga terjadi shortage."},
+    {q:"Biaya peluang dari suatu keputusan adalah …",o:["Seluruh biaya uang yang dikeluarkan","Nilai alternatif terbaik yang dikorbankan","Biaya tetap ditambah biaya variabel","Keuntungan yang sudah diterima"],a:1,e:"Opportunity cost adalah nilai dari alternatif terbaik yang dilepas ketika memilih suatu opsi."},
+    {q:"Bank sentral menaikkan suku bunga kebijakan. Dalam kondisi normal, kebijakan ini bertujuan untuk …",o:["Mendorong konsumsi dan kredit","Menekan tekanan inflasi","Meningkatkan jumlah uang beredar","Menurunkan biaya pinjaman"],a:1,e:"Suku bunga yang lebih tinggi cenderung menahan kredit dan permintaan agregat sehingga membantu meredam inflasi."},
+    {q:"PDB riil berbeda dari PDB nominal karena PDB riil …",o:["Menggunakan harga tahun dasar","Menghitung transaksi luar negeri saja","Tidak memasukkan konsumsi rumah tangga","Selalu lebih besar dari PDB nominal"],a:0,e:"PDB riil menilai output menggunakan harga konstan tahun dasar sehingga perubahan nilainya lebih mencerminkan perubahan volume produksi."}
+  ];
+  const key="ke8PracticeStatsV1";
+  let state={index:0,answers:Array(questions.length).fill(null),seconds:600,interval:null,started:false,finished:false};
+  const el=id=>document.getElementById(id);
+  function stats(){try{return JSON.parse(localStorage.getItem(key))||{attempts:0,best:0,correct:0}}catch(e){return {attempts:0,best:0,correct:0}}}
+  function saveStats(v){try{localStorage.setItem(key,JSON.stringify(v))}catch(e){}}
+  function paintStats(){const v=stats();if(el("practiceAttempts"))el("practiceAttempts").textContent=v.attempts;if(el("practiceBest"))el("practiceBest").textContent=v.best+"%";if(el("practiceCorrect"))el("practiceCorrect").textContent=v.correct}
+  function render(){
+    const q=questions[state.index],done=state.answers[state.index]!==null;
+    el("practiceStage").innerHTML='<div class="practice-topline"><span class="practice-muted">Soal '+(state.index+1)+' dari '+questions.length+'</span><span class="practice-timer" id="practiceClock">10:00</span></div><div class="practice-progress"><span style="width:'+((state.index)/questions.length*100)+'%"></span></div><div class="practice-question">'+q.q+'</div><div id="practiceOptions">'+q.o.map((v,i)=>'<label class="practice-option '+(state.answers[state.index]===i?'selected':'')+'"><input type="radio" name="practiceAnswer" value="'+i+'" '+(state.answers[state.index]===i?'checked':'')+' '+(done?'disabled':'')+'><span><b>'+String.fromCharCode(65+i)+'.</b> '+v+'</span></label>').join("")+'</div>'+(done?'<div class="practice-feedback '+(state.answers[state.index]===q.a?'correct':'wrong')+'"><b>'+(state.answers[state.index]===q.a?'Tepat!':'Belum tepat.')+'</b> '+q.e+'</div>':'')+'<div class="practice-actions"><button class="practice-btn secondary" id="practicePrev" '+(state.index===0?'disabled':'')+'>Sebelumnya</button><button class="practice-btn" id="practiceNext" '+(!done?'disabled':'')+'>'+(state.index===questions.length-1?'Lihat hasil':'Berikutnya')+'</button></div>';
+    el("practiceClock").textContent=Math.floor(state.seconds/60)+":"+String(state.seconds%60).padStart(2,"0");
+    el("practiceOptions").querySelectorAll("input").forEach(input=>input.addEventListener("change",()=>{state.answers[state.index]=Number(input.value);render()}));
+    el("practicePrev").onclick=()=>{state.index--;render()};
+    el("practiceNext").onclick=()=>{if(state.index===questions.length-1)finish();else{state.index++;render()}};
+  }
+  function finish(){
+    clearInterval(state.interval);state.finished=true;
+    const correct=state.answers.reduce((n,a,i)=>n+(a===questions[i].a?1:0),0),score=Math.round(correct/questions.length*100),v=stats();
+    v.attempts++;v.correct+=correct;v.best=Math.max(v.best,score);saveStats(v);paintStats();
+    el("practiceStage").innerHTML='<div class="practice-result"><div class="kicker">HASIL LATIHAN</div><strong>'+score+'%</strong><p>'+correct+' dari '+questions.length+' jawaban benar</p><p class="practice-muted">'+(score===100?'Sempurna! Pertahankan konsistensimu.':score>=60?'Bagus! Tinjau pembahasan untuk memperkuat konsep.':'Jangan menyerah. Pelajari pembahasan dan coba lagi.')+'</p><div class="practice-actions" style="justify-content:center"><button class="practice-btn" id="practiceAgain">Ulangi latihan</button></div></div><div>'+questions.map((q,i)=>'<div class="practice-feedback '+(state.answers[i]===q.a?'correct':'wrong')+'"><b>Soal '+(i+1)+' · '+(state.answers[i]===q.a?'Benar':'Perlu dipelajari')+'</b><br>'+q.e+'</div>').join("")+'</div>';
+    el("practiceAgain").onclick=start;
+  }
+  function start(){
+    clearInterval(state.interval);state={index:0,answers:Array(questions.length).fill(null),seconds:600,interval:null,started:true,finished:false};render();
+    state.interval=setInterval(()=>{state.seconds--;const clock=el("practiceClock");if(clock)clock.textContent=Math.floor(state.seconds/60)+":"+String(state.seconds%60).padStart(2,"0");if(state.seconds<=0)finish()},1000);
+  }
+  document.addEventListener("DOMContentLoaded",()=>{paintStats();if(el("practiceStart"))el("practiceStart").addEventListener("click",start)});
+  paintStats();
 })();
 
 </script>
