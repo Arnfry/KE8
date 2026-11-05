@@ -908,6 +908,22 @@ body{
   #home .hero .btn,#home .quick-grid .card,#home .quick-grid .card:after{transition:none}
 }
 
+
+/* ===== OSN Insight Lab ===== */
+.insight-wrap{width:min(1120px,calc(100% - 40px));margin:44px auto 76px;color:var(--text,#233653)}
+.insight-banner{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:34px 38px;border-radius:24px;background:linear-gradient(125deg,#263f68,#3f6094 68%,#5477ad);color:#fff;overflow:hidden;position:relative}
+.insight-banner:after{content:"";position:absolute;width:330px;height:330px;border:1px solid #ffffff25;border-radius:50%;right:80px;top:-210px;box-shadow:0 0 0 35px #ffffff08,0 0 0 75px #ffffff06}
+.insight-banner h2{font-size:clamp(1.8rem,4vw,3rem);line-height:1.12;margin:12px 0}.insight-banner h2 span{color:#c7d8f3}.insight-banner p{color:#d8e2f2;max-width:580px;line-height:1.7;margin:0}
+.insight-orbit{width:120px;height:120px;flex:0 0 120px;border:1px solid #ffffff55;border-radius:50%;display:grid;place-items:center;position:relative;font-weight:800;font-size:1.25rem;letter-spacing:.12em;background:#ffffff0d;box-shadow:0 0 0 14px #ffffff08}.insight-orbit i{position:absolute;right:4px;top:4px;font-style:normal;font-size:1.4rem;color:#d8e5fa}
+.insight-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:18px 0}.insight-kpis article,.insight-card{background:#fff;border:1px solid #dce5f2;border-radius:17px;box-shadow:0 8px 24px #314f820b}.insight-kpis article{padding:18px}.insight-kpis small,.insight-kpis span{display:block;color:#71819a;font-size:.76rem}.insight-kpis strong{display:block;font-size:2rem;color:#314f82;margin:7px 0 3px;font-weight:750;font-variant-numeric:tabular-nums}
+.insight-columns{display:grid;grid-template-columns:1.25fr .75fr;gap:14px;margin-bottom:14px}.insight-card{padding:22px}.insight-card-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.insight-card h3{font-size:1.12rem;margin:5px 0 0;color:#263d60}.insight-card-head p{font-size:.82rem;color:#71819a;margin:7px 0 0;line-height:1.6}.insight-chip{font-size:.68rem;color:#45638e;background:#edf3fb;border-radius:30px;padding:6px 10px;white-space:nowrap}
+.insight-week{height:160px;display:grid;grid-template-columns:repeat(7,1fr);gap:10px;align-items:end;padding:17px 0 0}.insight-day{height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:8px}.insight-day b{font-size:.67rem;color:#71819a;font-weight:600}.insight-bar{width:min(34px,75%);height:var(--bar);min-height:4px;background:linear-gradient(180deg,#7895c2,#3e6096);border-radius:7px 7px 3px 3px;position:relative}.insight-bar em{position:absolute;top:-19px;left:50%;transform:translateX(-50%);font-size:.65rem;font-style:normal;color:#425c84}.insight-day small{font-size:.68rem;color:#71819a}.insight-foot{display:flex;justify-content:space-between;gap:10px;border-top:1px solid #edf1f7;padding-top:12px;font-size:.72rem;color:#8390a3}.insight-foot b{color:#45638e}
+.insight-goal{display:flex;align-items:baseline;gap:8px;margin:24px 0 10px}.insight-goal strong{font-size:2.2rem;color:#314f82}.insight-goal span{font-size:.8rem;color:#71819a}.insight-meter{height:10px;background:#eaf0f8;border-radius:20px;overflow:hidden}.insight-meter span{display:block;height:100%;width:0;background:linear-gradient(90deg,#5477ad,#8ba7d0);border-radius:20px;transition:width .35s}.insight-target{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:18px;font-size:.78rem;color:#667894}.insight-target select{border:1px solid #dce5f2;border-radius:9px;padding:8px 10px;background:#f8fafd;color:#314f82}.insight-card>p{font-size:.78rem;line-height:1.6;color:#7b899e;margin:14px 0 0}
+.insight-topics{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:20px}.insight-topic{padding:13px;border:1px solid #edf1f7;border-radius:12px}.insight-topic-head{display:flex;justify-content:space-between;gap:8px;font-size:.8rem;color:#405675;margin-bottom:9px}.insight-topic-head b{color:#314f82}.insight-topic-track{height:7px;background:#edf2f8;border-radius:20px;overflow:hidden}.insight-topic-track span{display:block;height:100%;background:#6483b3;border-radius:20px}.insight-topic small{display:block;margin-top:7px;color:#8793a5;font-size:.68rem}.insight-bottom{display:grid;grid-template-columns:1fr 1fr;gap:14px}.insight-next{background:#f7f9fd}.insight-next p{max-width:480px}.insight-next .practice-btn{margin-top:17px}.insight-level-row{display:flex;align-items:center;gap:10px;margin-top:14px;font-size:.78rem;color:#60738f}.insight-level-row span{width:95px}.insight-level-row b{font-weight:600;color:#314f82}.insight-level-track{height:7px;flex:1;background:#edf2f8;border-radius:20px;overflow:hidden}.insight-level-track i{display:block;height:100%;background:#7895c2}.insight-disclaimer{font-size:.7rem;color:#8a96a8;line-height:1.6;margin:15px 2px}
+@media(max-width:800px){.insight-kpis{grid-template-columns:repeat(2,1fr)}.insight-columns{grid-template-columns:1fr}.insight-bottom{grid-template-columns:1fr}}
+@media(max-width:560px){.insight-wrap{width:calc(100% - 28px);margin:28px auto 50px}.insight-banner{padding:25px 21px}.insight-orbit{width:74px;height:74px;flex-basis:74px;font-size:.9rem}.insight-orbit i{font-size:1rem}.insight-kpis{gap:9px}.insight-kpis article{padding:14px}.insight-kpis strong{font-size:1.65rem}.insight-card{padding:17px}.insight-topics{grid-template-columns:1fr}.insight-week{gap:4px}.insight-week .insight-bar{width:25px}}
+@media(prefers-reduced-motion:reduce){.insight-meter span{transition:none}}
+
 </style>
 </head>
 <body>
@@ -922,6 +938,7 @@ body{
       <button data-page="syllabus">Silabus</button>
       <button data-page="archive">Arsip Soal</button>
       <button data-page="practice">Practice Arena</button>
+      <button data-page="insight">Insight Lab</button>
     </div>
   </nav>
 </header>
@@ -1310,6 +1327,43 @@ body{
   </div>
 </section>
 
+
+<section id="insight" class="page">
+ <div class="insight-wrap">
+  <div class="section-head"><div><div class="kicker">KE8 • PERFORMANCE INTELLIGENCE</div><h2>OSN Insight Lab</h2><p>Ubah hasil latihan menjadi keputusan belajar. Pantau konsistensi, temukan celah materi, dan tentukan target berikutnya.</p></div></div>
+  <div class="insight-banner"><div><div class="kicker">YOUR TRAINING COMMAND CENTER</div><h2>Belajar lebih cerdas,<br> <span>bertanding lebih siap.</span></h2><p>Semua data dihitung dari sesi Practice Arena di perangkat ini. Tidak ada akun atau server eksternal.</p></div><div class="insight-orbit"><span>KE8</span><i>✳</i></div></div>
+  <div class="insight-kpis">
+   <article><small>Soal dikerjakan</small><strong id="ilQuestions">0</strong><span>akumulasi seluruh sesi</span></article>
+   <article><small>Akurasi keseluruhan</small><strong id="ilAccuracy">—</strong><span>jawaban benar / total</span></article>
+   <article><small>Streak belajar</small><strong id="ilStreak">0 hari</strong><span>hari aktif berturut-turut</span></article>
+   <article><small>Rata-rata skor</small><strong id="ilAverage">—</strong><span>seluruh sesi tersimpan</span></article>
+  </div>
+  <div class="insight-columns">
+   <article class="insight-card">
+    <div class="insight-card-head"><div><div class="kicker">CONSISTENCY</div><h3>Aktivitas 7 hari</h3></div><span class="insight-chip">Rolling week</span></div>
+    <div class="insight-week" id="ilWeek"></div>
+    <div class="insight-foot"><span>Setiap batang = jumlah soal yang dikerjakan</span><b id="ilWeekTotal">0 soal</b></div>
+   </article>
+   <article class="insight-card">
+    <div class="insight-card-head"><div><div class="kicker">DAILY MISSION</div><h3>Target hari ini</h3></div><span class="insight-chip">Consistency wins</span></div>
+    <div class="insight-goal"><strong id="ilGoalProgress">0 / 10</strong><span>soal selesai</span></div>
+    <div class="insight-meter"><span id="ilGoalBar"></span></div>
+    <label class="insight-target">Target harian<select id="ilGoal"><option value="5">5 soal</option><option value="10" selected>10 soal</option><option value="15">15 soal</option><option value="20">20 soal</option><option value="30">30 soal</option></select></label>
+    <p id="ilGoalMessage">Satu sesi kecil lebih baik daripada menunggu motivasi besar.</p>
+   </article>
+  </div>
+  <article class="insight-card insight-mastery">
+   <div class="insight-card-head"><div><div class="kicker">SKILL MATRIX</div><h3>Peta penguasaan materi</h3><p>Bidang dengan akurasi rendah dan jumlah sampel memadai akan diprioritaskan.</p></div><span class="insight-chip">Adaptive diagnosis</span></div>
+   <div id="ilTopics" class="insight-topics"></div>
+  </article>
+  <div class="insight-bottom">
+   <article class="insight-card insight-next"><div class="kicker">NEXT BEST ACTION</div><h3 id="ilNextTitle">Mulai dari satu latihan.</h3><p id="ilNextText">Selesaikan sesi Practice Arena agar sistem dapat membaca pola belajarmu.</p><button class="practice-btn" onclick="go('practice')">Buka Practice Arena →</button></article>
+   <article class="insight-card insight-level"><div class="kicker">DIFFICULTY PROFILE</div><h3>Level yang pernah ditaklukkan</h3><div id="ilLevels"></div></article>
+  </div>
+  <p class="insight-disclaimer">Catatan: Insight Lab menggunakan riwayat lokal sejak fitur ini aktif. Data lama yang belum memiliki riwayat per sesi tetap tercermin pada statistik total Practice Arena, tetapi tidak dapat direkonstruksi menjadi grafik harian.</p>
+ </div>
+</section>
+
 <footer class="footer">
   <strong>TIM OSN EKONOMI SMADELTA</strong> • Belajar terstruktur, berlatih konsisten, berkembang bersama.
 </footer>
@@ -1614,6 +1668,8 @@ function filterList(input,id){
   const s=safeStats();s.attempts++;s.answered+=qs.length;s.correct+=correct;s.best=Math.max(s.best,score);s.topics=s.topics||{};
   qs.forEach((q,i)=>{const t=s.topics[q.topic]||{answered:0,correct:0};t.answered++;if(session.answers[i]===q.a)t.correct++;s.topics[q.topic]=t});
   saveStats(s);paintStats();
+  const topicBreakdown={};qs.forEach((q,i)=>{const t=topicBreakdown[q.topic]||{total:0,correct:0};t.total++;if(session.answers[i]===q.a)t.correct++;topicBreakdown[q.topic]=t});
+  const history=readHistory();history.push({date:dateKey(new Date()),at:Date.now(),total:qs.length,correct,score,mode:session.mode,topics:topicBreakdown});writeHistory(history);
   const duration=Math.round((Date.now()-session.started)/1000);
   const missed=qs.filter((q,i)=>session.answers[i]!==q.a);
   el("practiceStage").innerHTML='<div class="practice-result"><div class="kicker">SESSION REPORT</div><div class="practice-result-score">'+score+'%</div><p>'+correct+' dari '+qs.length+' jawaban benar · '+formatTime(duration)+' waktu pengerjaan</p><div class="practice-result-grid"><div><strong>'+correct+'</strong><span class="practice-muted">Benar</span></div><div><strong>'+missed.length+'</strong><span class="practice-muted">Perlu ditinjau</span></div><div><strong>'+levelLabels[qs.reduce((best,q)=>["basic","intermediate","advanced","olympiad"].indexOf(q.level)>["basic","intermediate","advanced","olympiad"].indexOf(best)?q.level:best,"basic")]+'</strong><span class="practice-muted">Level tertinggi</span></div></div><h3>Evaluasi per bidang</h3>'+Object.keys(labels).filter(t=>qs.some(q=>q.topic===t)).map(t=>{const total=qs.filter(q=>q.topic===t).length,good=qs.filter((q,i)=>q.topic===t&&session.answers[i]===q.a).length;return '<div class="practice-topic-result"><span>'+labels[t]+'</span><b>'+good+'/'+total+'</b></div>'}).join("")+'<div class="practice-actions" style="justify-content:center"><button class="practice-btn" id="practiceAgain">Latihan lagi</button></div></div><div><h3>Review pembahasan</h3>'+qs.map((q,i)=>'<div class="practice-feedback '+(session.answers[i]===q.a?"correct":"wrong")+'"><b>Soal '+(i+1)+' · '+(session.answers[i]===q.a?"Benar":"Perlu dipelajari")+'</b><p style="margin:7px 0;color:#43536e">'+q.why+'</p></div>').join("")+'</div>';
@@ -1621,6 +1677,34 @@ function filterList(input,id){
  }
  document.querySelectorAll(".practice-mode").forEach(b=>b.addEventListener("click",()=>{mode=b.dataset.mode;updateMode()}));
  el("practiceStart").addEventListener("click",start);
+  const historyKey="ke8PracticeHistoryV1";
+  const readHistory=()=>{try{const x=JSON.parse(localStorage.getItem(historyKey)||"[]");return Array.isArray(x)?x:[]}catch(e){return []}};
+  const writeHistory=x=>{try{localStorage.setItem(historyKey,JSON.stringify(x.slice(-180)))}catch(e){}};
+  const dateKey=d=>{const x=new Date(d);return x.getFullYear()+"-"+String(x.getMonth()+1).padStart(2,"0")+"-"+String(x.getDate()).padStart(2,"0")};
+  const topicNames={micro:"Mikroekonomi",macro:"Makroekonomi",international:"Ekonomi Internasional",finance:"Moneter & Keuangan",development:"Pembangunan & Kebijakan"};
+  function renderInsight(){
+   const stats=safeStats(),history=readHistory(),today=dateKey(new Date());
+   const total=history.reduce((n,x)=>n+x.total,0),right=history.reduce((n,x)=>n+x.correct,0),avg=history.length?Math.round(history.reduce((n,x)=>n+x.score,0)/history.length):0;
+   const days=new Set(history.map(x=>x.date));let streak=0,d=new Date();if(!days.has(dateKey(d)))d.setDate(d.getDate()-1);
+   while(days.has(dateKey(d))&&streak<365){streak++;d.setDate(d.getDate()-1)}
+   const todayCount=history.filter(x=>x.date===today).reduce((n,x)=>n+x.total,0),goal=Number(localStorage.getItem("ke8DailyGoal")||10);
+   el("ilQuestions").textContent=stats.answered||total;el("ilAccuracy").textContent=(stats.answered?Math.round(stats.correct/stats.answered*100):total?Math.round(right/total*100):0)+"%";el("ilStreak").textContent=streak+" hari";el("ilAverage").textContent=history.length?avg+"%":"—";
+   const week=Array.from({length:7},(_,i)=>{const dt=new Date();dt.setDate(dt.getDate()-(6-i));const keyDate=dateKey(dt);return {date:keyDate,label:["Min","Sen","Sel","Rab","Kam","Jum","Sab"][dt.getDay()],count:history.filter(x=>x.date===keyDate).reduce((n,x)=>n+x.total,0)}});
+   const max=Math.max(1,...week.map(x=>x.count));el("ilWeek").innerHTML=week.map(x=>'<div class="insight-day"><div class="insight-bar" style="--bar:'+Math.max(4,x.count/max*100)+'%"><em>'+x.count+'</em></div><small>'+x.label+'</small></div>').join("");
+   el("ilWeekTotal").textContent=week.reduce((n,x)=>n+x.count,0)+" soal";
+   el("ilGoal").value=String(goal);el("ilGoalProgress").textContent=todayCount+" / "+goal;el("ilGoalBar").style.width=Math.min(100,todayCount/goal*100)+"%";el("ilGoalMessage").textContent=todayCount>=goal?"Target harian tercapai. Pertahankan ritmenya!":(goal-todayCount)+" soal lagi menuju target hari ini.";
+   const topics=Object.keys(topicNames).map(k=>{const t=stats.topics?.[k]||{answered:0,correct:0};return {key:k,name:topicNames[k],answered:t.answered||0,accuracy:t.answered?Math.round(t.correct/t.answered*100):0}}).sort((a,b)=>a.answered-b.answered||a.accuracy-b.accuracy);
+   el("ilTopics").innerHTML=topics.map(t=>'<div class="insight-topic"><div class="insight-topic-head"><span>'+t.name+'</span><b>'+(t.answered?t.accuracy+"%":"—")+'</b></div><div class="insight-topic-track"><span style="width:'+t.accuracy+'%"></span></div><small>'+(t.answered?t.answered+" soal dijawab":"Belum ada data latihan")+'</small></div>').join("");
+   const weakest=topics.filter(t=>t.answered>=3).sort((a,b)=>a.accuracy-b.accuracy)[0];
+   el("ilNextTitle").textContent=weakest?"Prioritaskan "+weakest.name: "Bangun baseline kemampuanmu.";
+   el("ilNextText").textContent=weakest?"Akurasi bidang ini "+weakest.accuracy+"% dari "+weakest.answered+" soal. Ulangi latihan terarah untuk memperkuat konsep yang belum stabil.":"Belum cukup sampel untuk diagnosis adaptif. Kerjakan beberapa sesi di berbagai bidang agar rekomendasi lebih akurat.";
+   const levels=["basic","intermediate","advanced","olympiad"],levelNames=["Fundamental","Intermediate","Advanced","Olympiad"];
+   const levelCounts=Object.fromEntries(levels.map(k=>[k,bank.filter(q=>q.level===k).length]));
+   el("ilLevels").innerHTML=levels.map((k,i)=>'<div class="insight-level-row"><span>'+levelNames[i]+'</span><div class="insight-level-track"><i style="width:'+(levelCounts[k]/Math.max(...Object.values(levelCounts))*100)+'%"></i></div><b>'+levelCounts[k]+' soal</b></div>').join("");
+  }
+  el("ilGoal").addEventListener("change",e=>{localStorage.setItem("ke8DailyGoal",e.target.value);renderInsight()});
+  document.querySelector('[data-page="insight"]').addEventListener("click",renderInsight);
+
  paintStats();updateMode();
 })();
 </script>
