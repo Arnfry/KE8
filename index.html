@@ -767,35 +767,72 @@ body{
 }
 
 
-/* ===== KE8 Practice Arena ===== */
+/* ===== KE8 Practice Arena v2 ===== */
 .practice-wrap{max-width:1050px;margin:0 auto}
-.practice-hero{background:linear-gradient(135deg,#253e6b,#4f6fae);color:#fff;border-radius:22px;padding:28px;margin:18px 0 22px;box-shadow:0 12px 30px rgba(37,62,107,.16)}
-.practice-hero h2{margin:6px 0 8px;font-size:clamp(1.5rem,4vw,2.2rem)}
-.practice-hero p{margin:0;color:#e4ecf8;max-width:680px;line-height:1.65}
+.practice-hero{background:linear-gradient(135deg,#253e6b,#4f6fae);color:#fff;border-radius:22px;padding:30px;margin:18px 0 22px;box-shadow:0 12px 30px rgba(37,62,107,.16)}
+.practice-hero h2{color:#fff;margin:8px 0;font-size:clamp(1.6rem,4vw,2.35rem)}
+.practice-hero p{margin:0;color:#e4ecf8;max-width:720px;line-height:1.7}
+.practice-hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.practice-hero-tags span,.practice-pill{font-size:.72rem;font-weight:800;padding:7px 10px;border:1px solid rgba(255,255,255,.25);border-radius:30px;color:#f2f6fc;background:rgba(255,255,255,.1)}
 .practice-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}
-.practice-stat,.practice-panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}
+.practice-stat,.practice-panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:17px}
 .practice-stat strong{display:block;font-size:1.55rem;color:var(--deep);margin-top:4px}
 .practice-muted{color:var(--muted);font-size:.88rem}
-.practice-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-.practice-btn{border:0;border-radius:11px;padding:11px 16px;background:var(--accent);color:#fff;font-weight:750;cursor:pointer}
-.practice-btn.secondary{background:var(--panel2);color:var(--deep);border:1px solid var(--line)}
+.practice-dashboard{display:grid;gap:16px}
+.practice-intro h3,.practice-config h3,.practice-insight h3{margin:5px 0;color:var(--deep)}
+.practice-intro p{margin:5px 0 0}
+.practice-mode-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.practice-mode{font:inherit;text-align:left;min-height:165px;padding:17px;border:1px solid var(--line);border-radius:14px;background:#fff;color:var(--text);cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;gap:9px;transition:.18s}
+.practice-mode:hover,.practice-mode.active{border-color:var(--accent);background:#f2f6fc;box-shadow:0 5px 18px rgba(48,76,122,.08);transform:translateY(-2px)}
+.practice-mode b{color:var(--deep);font-size:.97rem}
+.practice-mode small{color:var(--muted);line-height:1.5;font-size:.79rem}
+.practice-mode em{font-style:normal;font-size:.75rem;font-weight:800;color:var(--accent);margin-top:auto}
+.mode-icon{font-size:1.45rem;color:var(--accent)}
+.practice-config{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
+.practice-config-head{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.practice-config-head .practice-pill{color:var(--deep);border-color:var(--line);background:var(--panel2)}
+.practice-config-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:15px}
+.practice-config-grid label{display:grid;gap:7px;color:var(--deep);font-size:.82rem;font-weight:800}
+.practice-config-grid select{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;background:#f9fbff;color:var(--text);font:inherit}
+.practice-session-note{font-size:.82rem;color:var(--muted);padding:12px 14px;background:#f2f6fc;border-radius:9px;margin-top:14px}
+.practice-btn{border:0;border-radius:10px;padding:12px 17px;background:var(--accent);color:#fff;font-weight:800;cursor:pointer;margin-top:15px}
+.practice-btn:hover{background:var(--deep)}
 .practice-btn:disabled{opacity:.45;cursor:not-allowed}
-.practice-topline{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
-.practice-progress{height:8px;background:var(--panel2);border-radius:20px;overflow:hidden;flex:1;min-width:120px}
-.practice-progress span{display:block;height:100%;width:0;background:var(--accent);transition:width .2s}
-.practice-question{font-size:1.12rem;font-weight:750;line-height:1.55;margin:18px 0}
-.practice-option{display:flex;gap:11px;align-items:flex-start;padding:13px;border:1px solid var(--line);border-radius:12px;margin:9px 0;cursor:pointer;background:var(--panel)}
+.practice-panel{min-height:190px}
+.practice-empty{text-align:center;max-width:570px;margin:18px auto;padding:18px}
+.empty-mark{width:54px;height:54px;border-radius:15px;background:#e4ecf8;color:var(--deep);font-weight:950;display:grid;place-items:center;margin:0 auto 14px}
+.practice-empty h3{color:var(--deep);margin:0}
+.practice-empty p{margin:8px 0 0}
+.practice-topline{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.practice-progress{height:7px;background:var(--panel2);border-radius:20px;overflow:hidden;margin:12px 0}
+.practice-progress span{display:block;height:100%;background:var(--accent);transition:width .2s}
+.practice-question-meta{display:flex;gap:7px;flex-wrap:wrap;margin:15px 0 9px}
+.practice-tag{font-size:.7rem;font-weight:850;color:var(--deep);background:#e7eef9;padding:5px 8px;border-radius:5px}
+.practice-question{font-size:1.08rem;font-weight:760;line-height:1.7;margin:12px 0;color:var(--text)}
+.practice-case{background:#f5f8fd;border:1px solid var(--line);padding:14px 16px;border-radius:10px;line-height:1.7;color:#43536e;margin:12px 0;font-size:.91rem}
+.practice-option{display:flex;gap:11px;align-items:flex-start;padding:13px;border:1px solid var(--line);border-radius:11px;margin:9px 0;cursor:pointer;background:#fff;line-height:1.5}
 .practice-option:hover{border-color:var(--accent)}
 .practice-option input{margin-top:4px;accent-color:var(--accent)}
-.practice-option.selected{border-color:var(--accent);background:var(--blue-soft)}
-.practice-feedback{padding:14px;border-radius:12px;margin-top:14px;line-height:1.6;background:var(--panel2)}
+.practice-option.selected{border-color:var(--accent);background:#edf3fb}
+.practice-feedback{padding:14px;border-radius:11px;margin-top:14px;line-height:1.7;background:#edf3fb;color:#354966}
 .practice-feedback.correct{border-left:4px solid var(--green)}
 .practice-feedback.wrong{border-left:4px solid var(--danger)}
-.practice-result{text-align:center;padding:26px 12px}
-.practice-result strong{font-size:2.7rem;color:var(--deep);display:block}
-.practice-timer{font-variant-numeric:tabular-nums;font-weight:850;color:var(--deep)}
-@media(max-width:650px){.practice-stats{grid-template-columns:1fr 1fr}.practice-stat:last-child{grid-column:span 2}.practice-hero{padding:22px}.practice-panel{padding:13px}}
-@media(prefers-reduced-motion:reduce){.practice-progress span{transition:none}}
+.practice-feedback b{color:var(--deep)}
+.practice-question-nav{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:18px}
+.practice-question-nav .practice-btn{margin:0}
+.practice-timer{font-variant-numeric:tabular-nums;font-weight:900;color:var(--deep);padding:7px 10px;background:#edf3fb;border-radius:7px}
+.practice-result{text-align:center;padding:22px 10px}
+.practice-result-score{font-size:2.8rem;font-weight:950;color:var(--deep)}
+.practice-result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:18px 0}
+.practice-result-grid div{background:#f2f6fc;border-radius:10px;padding:12px}
+.practice-result-grid strong{display:block;color:var(--deep);font-size:1.3rem}
+.practice-topic-result{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.87rem}
+.practice-insight{border-top:1px solid var(--line);padding:20px 2px;display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
+.practice-loop{display:flex;gap:10px;align-items:center;flex-wrap:wrap;color:var(--deep);font-size:.78rem;font-weight:800}
+.practice-loop i{font-style:normal;color:#8da0bf}
+@media(max-width:850px){.practice-mode-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.practice-stats{grid-template-columns:repeat(3,1fr);gap:7px}.practice-stat{padding:12px 9px}.practice-stat strong{font-size:1.2rem}.practice-stat .practice-muted{font-size:.72rem}.practice-hero{padding:22px}.practice-config{padding:15px}.practice-config-grid{grid-template-columns:1fr}.practice-mode{min-height:155px;padding:13px}.practice-result-grid{grid-template-columns:1fr 1fr}.practice-panel{padding:13px}.practice-question{font-size:1rem}}
+@media(prefers-reduced-motion:reduce){.practice-mode,.practice-progress span{transition:none}}
 
 </style>
 </head>
@@ -1157,21 +1194,44 @@ body{
 <section id="practice" class="page">
   <div class="practice-wrap">
     <div class="section-head">
-      <div><div class="kicker">Practice & Progress</div><h2>Practice Arena</h2><p>Latihan singkat untuk menguji pemahaman konsep ekonomi. Kerjakan, evaluasi, lalu ulangi untuk meningkatkan hasil.</p></div>
+      <div><div class="kicker">KE8 • TRAINING LAB</div><h2>Practice Arena</h2><p>Tempat membangun nalar ekonomi: pelajari konsep, pecahkan kasus, lalu ukur kesiapan olimpiademu.</p></div>
     </div>
     <div class="practice-hero">
-      <div class="kicker" style="color:#dbe6f6">KE8 • ECONOMICS TRAINING</div>
-      <h2>Uji pemahamanmu.</h2>
-      <p>Lima soal pilihan ganda dengan batas waktu 10 menit. Setiap jawaban dilengkapi pembahasan agar latihanmu bukan sekadar mengejar skor.</p>
-      <div class="practice-actions"><button class="practice-btn" id="practiceStart">Mulai latihan</button><span class="practice-muted" style="color:#e4ecf8;align-self:center">5 soal · 10 menit · pembahasan langsung</span></div>
+      <div class="kicker" style="color:#dbe6f6">FROM CONCEPT TO COMPETITION</div>
+      <h2>Belajar bukan menebak jawaban.</h2>
+      <p>Latih cara berpikir ekonom: baca data, bangun argumen, hitung dampak, dan evaluasi keputusan. Pilih jalur latihan sesuai targetmu.</p>
+      <div class="practice-hero-tags"><span>Case-based</span><span>Adaptive difficulty</span><span>Progress tracking</span></div>
     </div>
     <div class="practice-stats">
-      <div class="practice-stat"><span class="practice-muted">Latihan selesai</span><strong id="practiceAttempts">0</strong></div>
+      <div class="practice-stat"><span class="practice-muted">Sesi selesai</span><strong id="practiceAttempts">0</strong></div>
       <div class="practice-stat"><span class="practice-muted">Skor terbaik</span><strong id="practiceBest">0%</strong></div>
-      <div class="practice-stat"><span class="practice-muted">Jawaban benar total</span><strong id="practiceCorrect">0</strong></div>
+      <div class="practice-stat"><span class="practice-muted">Akurasi total</span><strong id="practiceCorrect">—</strong></div>
     </div>
-    <div class="practice-panel" id="practiceStage">
-      <div class="practice-result"><strong>Siap mulai?</strong><p class="practice-muted">Tekan tombol “Mulai latihan” untuk membuka sesi pertamamu. Progres tersimpan di perangkat ini.</p></div>
+    <div class="practice-dashboard">
+      <div class="practice-intro"><div class="kicker">PILIH JALUR</div><h3>Bagaimana kamu ingin berlatih?</h3><p>Setiap jalur punya tujuan berbeda. Kamu bisa mulai dari pemahaman, lalu naik ke soal olimpiade.</p></div>
+      <div class="practice-mode-grid">
+        <button class="practice-mode active" data-mode="learn"><span class="mode-icon">◈</span><b>Bangun Fondasi</b><small>Review konsep inti dan cek pemahaman tanpa tekanan waktu.</small><em>Untuk memperkuat dasar →</em></button>
+        <button class="practice-mode" data-mode="topic"><span class="mode-icon">⌁</span><b>Latihan Terarah</b><small>Fokus pada satu bidang ekonomi dan tingkat kesulitan pilihanmu.</small><em>Untuk menutup gap materi →</em></button>
+        <button class="practice-mode" data-mode="challenge"><span class="mode-icon">△</span><b>Problem Solving</b><small>Kasus multi-langkah, interpretasi data, dan analisis kebijakan.</small><em>Untuk mengasah penalaran →</em></button>
+        <button class="practice-mode" data-mode="simulation"><span class="mode-icon">◎</span><b>Simulasi OSN</b><small>Ujian campuran dengan timer, skor, dan evaluasi akhir.</small><em>Untuk menguji kesiapan →</em></button>
+      </div>
+      <div class="practice-config" id="practiceConfig">
+        <div class="practice-config-head"><div><div class="kicker">PENGATURAN SESI</div><h3 id="configTitle">Bangun Fondasi</h3></div><span class="practice-pill">Personal study</span></div>
+        <div class="practice-config-grid">
+          <label>Bidang materi<select id="practiceTopic"><option value="all">Semua bidang</option><option value="micro">Mikroekonomi</option><option value="macro">Makroekonomi</option><option value="international">Ekonomi Internasional</option><option value="finance">Moneter & Keuangan</option><option value="development">Pembangunan & Kebijakan</option></select></label>
+          <label>Tingkat kesulitan<select id="practiceLevel"><option value="all">Campuran</option><option value="basic">Fundamental</option><option value="intermediate">Intermediate</option><option value="advanced">Advanced</option><option value="olympiad">Olympiad</option></select></label>
+          <label>Jumlah soal<select id="practiceCount"><option value="5">5 soal · pemanasan</option><option value="10" selected>10 soal · sesi fokus</option><option value="15">15 soal · intensif</option></select></label>
+        </div>
+        <div class="practice-session-note" id="practiceSessionNote">Tanpa timer · feedback setelah setiap jawaban · cocok untuk memahami konsep.</div>
+        <button class="practice-btn" id="practiceStart">Mulai sesi <span>→</span></button>
+      </div>
+      <div class="practice-panel" id="practiceStage">
+        <div class="practice-empty"><div class="empty-mark">KE8</div><h3>Progres dimulai dari satu soal.</h3><p>Pilih jalur latihan di atas. Setelah sesi selesai, kamu akan mendapat peta kekuatan dan materi yang perlu diperbaiki.</p></div>
+      </div>
+      <div class="practice-insight" id="practiceInsight">
+        <div><div class="kicker">LEARNING LOOP</div><h3>Latihan yang punya arah.</h3></div>
+        <div class="practice-loop"><span>01 · Pahami</span><i>→</i><span>02 · Terapkan</span><i>→</i><span>03 · Evaluasi</span><i>→</i><span>04 · Ulangi</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1376,44 +1436,79 @@ function filterList(input,id){
 })();
 
 
-/* ===== KE8 Practice Arena logic ===== */
+/* ===== KE8 Practice Arena v2 engine ===== */
 (function(){
-  const questions=[
-    {q:"Ketika harga suatu barang naik, jumlah barang yang diminta konsumen cenderung turun, dengan asumsi faktor lain tetap. Pernyataan ini menggambarkan …",o:["Hukum penawaran","Hukum permintaan","Biaya peluang","Elastisitas silang"],a:1,e:"Hukum permintaan menyatakan hubungan negatif antara harga dan jumlah yang diminta, ceteris paribus."},
-    {q:"Jika pemerintah menetapkan harga maksimum di bawah harga keseimbangan pasar, dampak yang paling mungkin terjadi adalah …",o:["Surplus barang","Kekurangan barang","Keseimbangan baru tanpa perubahan","Penawaran meningkat tanpa batas"],a:1,e:"Harga maksimum yang mengikat membuat jumlah yang diminta lebih besar daripada jumlah yang ditawarkan sehingga terjadi shortage."},
-    {q:"Biaya peluang dari suatu keputusan adalah …",o:["Seluruh biaya uang yang dikeluarkan","Nilai alternatif terbaik yang dikorbankan","Biaya tetap ditambah biaya variabel","Keuntungan yang sudah diterima"],a:1,e:"Opportunity cost adalah nilai dari alternatif terbaik yang dilepas ketika memilih suatu opsi."},
-    {q:"Bank sentral menaikkan suku bunga kebijakan. Dalam kondisi normal, kebijakan ini bertujuan untuk …",o:["Mendorong konsumsi dan kredit","Menekan tekanan inflasi","Meningkatkan jumlah uang beredar","Menurunkan biaya pinjaman"],a:1,e:"Suku bunga yang lebih tinggi cenderung menahan kredit dan permintaan agregat sehingga membantu meredam inflasi."},
-    {q:"PDB riil berbeda dari PDB nominal karena PDB riil …",o:["Menggunakan harga tahun dasar","Menghitung transaksi luar negeri saja","Tidak memasukkan konsumsi rumah tangga","Selalu lebih besar dari PDB nominal"],a:0,e:"PDB riil menilai output menggunakan harga konstan tahun dasar sehingga perubahan nilainya lebih mencerminkan perubahan volume produksi."}
-  ];
-  const key="ke8PracticeStatsV1";
-  let state={index:0,answers:Array(questions.length).fill(null),seconds:600,interval:null,started:false,finished:false};
-  const el=id=>document.getElementById(id);
-  function stats(){try{return JSON.parse(localStorage.getItem(key))||{attempts:0,best:0,correct:0}}catch(e){return {attempts:0,best:0,correct:0}}}
-  function saveStats(v){try{localStorage.setItem(key,JSON.stringify(v))}catch(e){}}
-  function paintStats(){const v=stats();if(el("practiceAttempts"))el("practiceAttempts").textContent=v.attempts;if(el("practiceBest"))el("practiceBest").textContent=v.best+"%";if(el("practiceCorrect"))el("practiceCorrect").textContent=v.correct}
-  function render(){
-    const q=questions[state.index],done=state.answers[state.index]!==null;
-    el("practiceStage").innerHTML='<div class="practice-topline"><span class="practice-muted">Soal '+(state.index+1)+' dari '+questions.length+'</span><span class="practice-timer" id="practiceClock">10:00</span></div><div class="practice-progress"><span style="width:'+((state.index)/questions.length*100)+'%"></span></div><div class="practice-question">'+q.q+'</div><div id="practiceOptions">'+q.o.map((v,i)=>'<label class="practice-option '+(state.answers[state.index]===i?'selected':'')+'"><input type="radio" name="practiceAnswer" value="'+i+'" '+(state.answers[state.index]===i?'checked':'')+' '+(done?'disabled':'')+'><span><b>'+String.fromCharCode(65+i)+'.</b> '+v+'</span></label>').join("")+'</div>'+(done?'<div class="practice-feedback '+(state.answers[state.index]===q.a?'correct':'wrong')+'"><b>'+(state.answers[state.index]===q.a?'Tepat!':'Belum tepat.')+'</b> '+q.e+'</div>':'')+'<div class="practice-actions"><button class="practice-btn secondary" id="practicePrev" '+(state.index===0?'disabled':'')+'>Sebelumnya</button><button class="practice-btn" id="practiceNext" '+(!done?'disabled':'')+'>'+(state.index===questions.length-1?'Lihat hasil':'Berikutnya')+'</button></div>';
-    el("practiceClock").textContent=Math.floor(state.seconds/60)+":"+String(state.seconds%60).padStart(2,"0");
-    el("practiceOptions").querySelectorAll("input").forEach(input=>input.addEventListener("change",()=>{state.answers[state.index]=Number(input.value);render()}));
-    el("practicePrev").onclick=()=>{state.index--;render()};
-    el("practiceNext").onclick=()=>{if(state.index===questions.length-1)finish();else{state.index++;render()}};
-  }
-  function finish(){
-    clearInterval(state.interval);state.finished=true;
-    const correct=state.answers.reduce((n,a,i)=>n+(a===questions[i].a?1:0),0),score=Math.round(correct/questions.length*100),v=stats();
-    v.attempts++;v.correct+=correct;v.best=Math.max(v.best,score);saveStats(v);paintStats();
-    el("practiceStage").innerHTML='<div class="practice-result"><div class="kicker">HASIL LATIHAN</div><strong>'+score+'%</strong><p>'+correct+' dari '+questions.length+' jawaban benar</p><p class="practice-muted">'+(score===100?'Sempurna! Pertahankan konsistensimu.':score>=60?'Bagus! Tinjau pembahasan untuk memperkuat konsep.':'Jangan menyerah. Pelajari pembahasan dan coba lagi.')+'</p><div class="practice-actions" style="justify-content:center"><button class="practice-btn" id="practiceAgain">Ulangi latihan</button></div></div><div>'+questions.map((q,i)=>'<div class="practice-feedback '+(state.answers[i]===q.a?'correct':'wrong')+'"><b>Soal '+(i+1)+' · '+(state.answers[i]===q.a?'Benar':'Perlu dipelajari')+'</b><br>'+q.e+'</div>').join("")+'</div>';
-    el("practiceAgain").onclick=start;
-  }
-  function start(){
-    clearInterval(state.interval);state={index:0,answers:Array(questions.length).fill(null),seconds:600,interval:null,started:true,finished:false};render();
-    state.interval=setInterval(()=>{state.seconds--;const clock=el("practiceClock");if(clock)clock.textContent=Math.floor(state.seconds/60)+":"+String(state.seconds%60).padStart(2,"0");if(state.seconds<=0)finish()},1000);
-  }
-  document.addEventListener("DOMContentLoaded",()=>{paintStats();if(el("practiceStart"))el("practiceStart").addEventListener("click",start)});
-  paintStats();
+ const bank=[
+  {id:"m1",topic:"micro",level:"basic",title:"Elastisitas permintaan",case:"Harga kopi naik dari Rp20.000 menjadi Rp24.000 per kg. Jumlah yang diminta turun dari 500 kg menjadi 400 kg per minggu.",q:"Dengan metode persentase awal (base value), berapakah elastisitas harga permintaan dan sifat permintaannya?",o:["−0,5; inelastis","−1; elastis uniter","−1,5; elastis","−2; elastis"],a:1,why:"Persentase perubahan Q = −100/500 = −20%. Persentase perubahan P = 4.000/20.000 = 20%. Ed = −20%/20% = −1, sehingga elastisitas uniter. Perhatikan bahwa metode midpoint menghasilkan nilai berbeda; soal ini secara eksplisit memakai basis awal."},
+  {id:"m2",topic:"micro",level:"intermediate",title:"Pajak spesifik",case:"Permintaan dan penawaran linear: Qd = 100 − 2P dan Qs = 20 + 2P. Pemerintah mengenakan pajak spesifik Rp10 per unit kepada penjual.",q:"Setelah pajak, berapa harga yang dibayar konsumen dan jumlah keseimbangan baru?",o:["P = 20; Q = 60","P = 22,5; Q = 55","P = 25; Q = 50","P = 30; Q = 40"],a:2,why:"Dengan pajak t=10, harga yang diterima penjual Ps=Pc−10. Setarakan 100−2Pc = 20+2(Pc−10) = 2Pc. Maka 100=4Pc, Pc=25 dan Q=50."},
+  {id:"m3",topic:"micro",level:"advanced",title:"Biaya produksi",case:"Sebuah perusahaan memiliki fungsi biaya total TC = 100 + 20Q + Q². Harga pasar produk adalah Rp80 per unit dan perusahaan bersifat price taker.",q:"Pada tingkat output yang memaksimalkan laba, berapa laba ekonominya?",o:["Rp500","Rp800","Rp900","Rp1.000"],a:1,why:"MC = 20 + 2Q. Kondisi maksimum laba P=MC memberi 80=20+2Q sehingga Q=30. TR=2.400 dan TC=100+600+900=1.600. Laba = Rp800."},
+  {id:"ma1",topic:"macro",level:"basic",title:"Identitas pendapatan nasional",case:"Dalam perekonomian tertutup tanpa pajak, konsumsi C=200+0,75Yd dan investasi otonom I=100. Pemerintah belum melakukan belanja.",q:"Berapakah pendapatan keseimbangan?",o:["800","1.000","1.200","1.400"],a:2,why:"Dalam keseimbangan Y=C+I. Karena tidak ada pajak, Yd=Y. Y=200+0,75Y+100; 0,25Y=300; Y=1.200."},
+  {id:"ma2",topic:"macro",level:"intermediate",title:"Kebijakan fiskal",case:"Perekonomian mengalami resesi dengan output aktual di bawah output potensial. MPC masyarakat adalah 0,8 dan pemerintah ingin menaikkan output keseimbangan sebesar Rp100 triliun melalui kenaikan belanja pemerintah.",q:"Dengan model Keynesian sederhana tanpa pajak dan impor, berapa kenaikan belanja yang diperlukan?",o:["Rp10 triliun","Rp20 triliun","Rp25 triliun","Rp80 triliun"],a:1,why:"Pengganda belanja pemerintah = 1/(1−MPC)=1/0,2=5. ΔY=5×ΔG. Agar output naik 100, ΔG=100/5=20 triliun."},
+  {id:"ma3",topic:"macro",level:"olympiad",title:"Inflasi dan output gap",case:"Inflasi aktual meningkat dari 3% menjadi 6%, sementara pengangguran berada di bawah tingkat alamiahnya. Bank sentral menaikkan suku bunga kebijakan secara bertahap.",q:"Melalui mekanisme transmisi moneter, urutan dampak jangka pendek yang paling tepat adalah …",o:["Suku bunga naik → investasi naik → AD naik → inflasi turun","Suku bunga naik → kredit dan investasi melemah → AD turun → tekanan inflasi mereda","Suku bunga naik → kurs pasti melemah → ekspor naik → inflasi naik","Suku bunga naik → penawaran agregat langsung bergeser ke kanan"],a:1,why:"Suku bunga lebih tinggi meningkatkan biaya pinjaman dan opportunity cost konsumsi/investasi. Permintaan agregat melambat, sehingga tekanan inflasi berkurang dengan kemungkinan trade-off berupa output dan kesempatan kerja yang lebih rendah dalam jangka pendek."},
+  {id:"i1",topic:"international",level:"intermediate",title:"Keunggulan komparatif",case:"Dalam satu hari, Negara A dapat memproduksi 10 kain atau 5 mesin. Negara B dapat memproduksi 6 kain atau 6 mesin. Biaya peluang dianggap konstan.",q:"Pola spesialisasi yang sesuai dengan keunggulan komparatif adalah …",o:["A pada kain, B pada mesin","A pada mesin, B pada kain","Keduanya pada kain","Tidak ada dasar perdagangan yang saling menguntungkan"],a:0,why:"Biaya peluang 1 mesin: A=2 kain, B=1 kain. B unggul komparatif pada mesin. Biaya peluang 1 kain: A=0,5 mesin, B=1 mesin. A unggul komparatif pada kain."},
+  {id:"i2",topic:"international",level:"advanced",title:"Nilai tukar dan neraca perdagangan",case:"Mata uang domestik terdepresiasi 10%. Dalam jangka pendek, volume ekspor dan impor belum banyak berubah karena kontrak dan kebiasaan perdagangan.",q:"Mengapa neraca perdagangan dapat memburuk terlebih dahulu sebelum membaik?",o:["Karena nilai impor dalam mata uang domestik naik sebelum volume impor menyesuaikan","Karena depresiasi selalu menurunkan harga ekspor dalam mata uang asing","Karena ekspor otomatis berhenti saat kurs melemah","Karena neraca perdagangan tidak dipengaruhi kurs"],a:0,why:"Ini menggambarkan J-curve. Nilai impor yang sudah terikat kontrak menjadi lebih mahal dalam mata uang domestik, sementara volume belum berubah. Setelah waktu berlalu, respons kuantitas ekspor dan impor dapat memperbaiki neraca perdagangan jika elastisitas memadai."},
+  {id:"f1",topic:"finance",level:"basic",title:"Nilai waktu uang",case:"Seseorang akan menerima Rp121 juta dua tahun lagi. Tingkat diskonto tahunan 10% dan bunga majemuk.",q:"Berapakah nilai sekarang (present value) penerimaan tersebut?",o:["Rp90 juta","Rp100 juta","Rp110 juta","Rp111 juta"],a:1,why:"PV = FV/(1+r)^n = 121/(1,1²) = 121/1,21 = Rp100 juta."},
+  {id:"f2",topic:"finance",level:"olympiad",title:"Inflasi dan suku bunga riil",case:"Suku bunga nominal deposito 8% per tahun. Inflasi aktual selama periode yang sama 5%.",q:"Dengan pendekatan Fisher eksak, berapa suku bunga riil?",o:["2,5%","2,86%","3%","3,8%"],a:1,why:"Persamaan Fisher: 1+r=(1+i)/(1+π). r=1,08/1,05−1≈0,02857 atau 2,86%. Pendekatan sederhana i−π menghasilkan 3%, tetapi bukan nilai eksak."},
+  {id:"d1",topic:"development",level:"intermediate",title:"Pertumbuhan vs pembangunan",case:"PDB riil sebuah negara tumbuh 6% selama tiga tahun. Namun, tingkat kemiskinan stagnan dan ketimpangan pendapatan meningkat.",q:"Kesimpulan paling tepat adalah …",o:["Pertumbuhan ekonomi selalu identik dengan pembangunan","PDB riil tidak dapat digunakan untuk mengukur output","Pertumbuhan terjadi, tetapi kualitas dan pemerataan pembangunan belum tentu membaik","Ketimpangan pasti turun setelah pertumbuhan tinggi"],a:2,why:"Pertumbuhan mengukur kenaikan output, sedangkan pembangunan mencakup perubahan struktural, kualitas hidup, pemerataan, dan keberlanjutan. Pertumbuhan tinggi tidak otomatis inklusif."},
+  {id:"d2",topic:"development",level:"advanced",title:"Subsidi dan kesejahteraan",case:"Pemerintah memberi subsidi per unit kepada produsen barang kebutuhan pokok. Permintaan relatif tidak elastis, sedangkan penawaran relatif elastis.",q:"Secara umum, pihak yang menerima manfaat ekonomi subsidi lebih besar adalah …",o:["Konsumen, karena permintaannya lebih tidak elastis","Produsen, karena penawarannya lebih elastis","Pemerintah, karena subsidi selalu menjadi penerimaan","Manfaat selalu terbagi sama rata"],a:0,why:"Bagian manfaat subsidi cenderung lebih besar pada sisi pasar yang lebih tidak elastis. Karena permintaan lebih tidak elastis daripada penawaran, konsumen memperoleh bagian manfaat relatif lebih besar."}
+ ];
+ const key="ke8PracticeStatsV2", oldKey="ke8PracticeStatsV1";
+ const labels={micro:"Mikroekonomi",macro:"Makroekonomi",international:"Ekonomi Internasional",finance:"Moneter & Keuangan",development:"Pembangunan & Kebijakan"};
+ const levelLabels={basic:"Fundamental",intermediate:"Intermediate",advanced:"Advanced",olympiad:"Olympiad"};
+ let mode="learn",session=null;
+ const el=id=>document.getElementById(id);
+ const safeStats=()=>{try{const saved=JSON.parse(localStorage.getItem(key));if(saved)return saved;const old=JSON.parse(localStorage.getItem(oldKey));if(old){const migrated={attempts:old.attempts||0,best:old.best||0,answered:(old.attempts||0)*5,correct:old.correct||0,topics:{}};localStorage.setItem(key,JSON.stringify(migrated));return migrated}return {attempts:0,best:0,answered:0,correct:0,topics:{}}}catch(e){return {attempts:0,best:0,answered:0,correct:0,topics:{}}}};
+ const saveStats=v=>{try{localStorage.setItem(key,JSON.stringify(v))}catch(e){}};
+ function paintStats(){const s=safeStats();el("practiceAttempts").textContent=s.attempts;el("practiceBest").textContent=s.best+"%";el("practiceCorrect").textContent=s.answered?Math.round(s.correct/s.answered*100)+"%":"—"}
+ function pickQuestions(){
+  const topic=el("practiceTopic").value,level=el("practiceLevel").value,count=Number(el("practiceCount").value);
+  let pool=bank.filter(q=>(topic==="all"||q.topic===topic)&&(level==="all"||q.level===level));
+  if(mode==="learn")pool=pool.filter(q=>q.level==="basic"||q.level==="intermediate");
+  if(mode==="challenge")pool=pool.filter(q=>q.level==="advanced"||q.level==="olympiad");
+  if(!pool.length){showToast("Kombinasi ini belum punya cukup soal. Coba bidang atau level lain.");return []}
+  for(let i=pool.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]]}
+  return pool.slice(0,Math.min(count,pool.length));
+ }
+ function updateMode(){
+  document.querySelectorAll(".practice-mode").forEach(b=>b.classList.toggle("active",b.dataset.mode===mode));
+  const titles={learn:"Bangun Fondasi",topic:"Latihan Terarah",challenge:"Problem Solving",simulation:"Simulasi OSN"};
+  el("configTitle").textContent=titles[mode];
+  const notes={learn:"Tanpa timer · feedback setelah setiap jawaban · fokus pada pemahaman konsep.",topic:"Pilih bidang dan level · feedback per soal · cocok untuk latihan terarah.",challenge:"Kasus analitis · pembahasan setelah menjawab · biasakan menyusun penalaran.",simulation:"Timer 30 menit untuk 10 soal · pembahasan dibuka setelah sesi dikumpulkan."};
+  el("practiceSessionNote").textContent=notes[mode];
+  if(mode==="simulation"){el("practiceCount").value="10";el("practiceCount").disabled=true;el("practiceLevel").value="all";el("practiceLevel").disabled=true;el("practiceTopic").value="all";el("practiceTopic").disabled=true}
+  else{el("practiceCount").disabled=false;el("practiceLevel").disabled=false;el("practiceTopic").disabled=false}
+ }
+ function start(){
+  const qs=pickQuestions();if(!qs.length)return;
+  if(mode==="simulation"&&qs.length<5){showToast("Bank soal untuk simulasi masih terbatas. Pilih semua bidang.");return}
+  session={questions:qs,index:0,answers:Array(qs.length).fill(null),seconds:mode==="simulation"?1800:null,started:Date.now()};
+  render();
+  if(mode==="simulation")session.interval=setInterval(()=>{session.seconds--;const t=el("practiceClock");if(t)t.textContent=formatTime(session.seconds);if(session.seconds<=0)finish(),showToast("Waktu simulasi habis. Hasilmu sudah dihitung.")},1000);
+ }
+ function formatTime(n){return Math.floor(n/60)+":"+String(n%60).padStart(2,"0")}
+ function render(){
+  const q=session.questions[session.index],chosen=session.answers[session.index],answered=chosen!==null,review=mode!=="simulation"&&answered;
+  const progress=Math.round((session.index/session.questions.length)*100);
+  el("practiceStage").innerHTML='<div class="practice-topline"><span class="practice-muted">SOAL '+(session.index+1)+' / '+session.questions.length+'</span>'+(mode==="simulation"?'<span class="practice-timer" id="practiceClock">'+formatTime(session.seconds)+'</span>':'<span class="practice-tag">'+(mode==="challenge"?"ANALYTICAL CASE":mode==="learn"?"CONCEPT CHECK":"FOCUSED PRACTICE")+'</span>')+'</div><div class="practice-progress"><span style="width:'+progress+'%"></span></div><div class="practice-question-meta"><span class="practice-tag">'+labels[q.topic]+'</span><span class="practice-tag">'+levelLabels[q.level]+'</span><span class="practice-tag">'+q.title+'</span></div><div class="practice-case">'+q.case+'</div><div class="practice-question">'+q.q+'</div><div>'+q.o.map((v,i)=>'<label class="practice-option '+(chosen===i?"selected":"")+'"><input type="radio" name="practiceAnswer" value="'+i+'" '+(chosen===i?"checked":"")+' '+(answered?"disabled":"")+'><span><b>'+String.fromCharCode(65+i)+'.</b> '+v+'</span></label>').join("")+'</div>'+(review?'<div class="practice-feedback '+(chosen===q.a?"correct":"wrong")+'"><b>'+(chosen===q.a?"Tepat.":"Belum tepat.")+'</b><br>'+q.why+'</div>':"")+'<div class="practice-question-nav"><button class="practice-btn" id="practicePrev" '+(session.index===0?"disabled":"")+' style="background:#e4ecf8;color:#314f82">← Sebelumnya</button><span class="practice-muted">'+(answered?"Jawaban tersimpan":"Pilih satu jawaban")+'</span><button class="practice-btn" id="practiceNext" '+(!answered?"disabled":"")+'>'+(session.index===session.questions.length-1?(mode==="simulation"?"Kumpulkan jawaban":"Lihat evaluasi"):"Berikutnya →")+'</button></div>';
+  el("practiceStage").querySelectorAll("input").forEach(input=>input.addEventListener("change",()=>{session.answers[session.index]=Number(input.value);render()}));
+  el("practicePrev").onclick=()=>{session.index--;render()};
+  el("practiceNext").onclick=()=>{if(session.index===session.questions.length-1)finish();else{session.index++;render()}};
+ }
+ function finish(){
+  if(!session)return;clearInterval(session.interval);
+  const qs=session.questions,correct=session.answers.reduce((n,a,i)=>n+(a===qs[i].a?1:0),0),score=Math.round(correct/qs.length*100);
+  const s=safeStats();s.attempts++;s.answered+=qs.length;s.correct+=correct;s.best=Math.max(s.best,score);s.topics=s.topics||{};
+  qs.forEach((q,i)=>{const t=s.topics[q.topic]||{answered:0,correct:0};t.answered++;if(session.answers[i]===q.a)t.correct++;s.topics[q.topic]=t});
+  saveStats(s);paintStats();
+  const duration=Math.round((Date.now()-session.started)/1000);
+  const missed=qs.filter((q,i)=>session.answers[i]!==q.a);
+  el("practiceStage").innerHTML='<div class="practice-result"><div class="kicker">SESSION REPORT</div><div class="practice-result-score">'+score+'%</div><p>'+correct+' dari '+qs.length+' jawaban benar · '+formatTime(duration)+' waktu pengerjaan</p><div class="practice-result-grid"><div><strong>'+correct+'</strong><span class="practice-muted">Benar</span></div><div><strong>'+missed.length+'</strong><span class="practice-muted">Perlu ditinjau</span></div><div><strong>'+levelLabels[qs.reduce((best,q)=>["basic","intermediate","advanced","olympiad"].indexOf(q.level)>["basic","intermediate","advanced","olympiad"].indexOf(best)?q.level:best,"basic")]+'</strong><span class="practice-muted">Level tertinggi</span></div></div><h3>Evaluasi per bidang</h3>'+Object.keys(labels).filter(t=>qs.some(q=>q.topic===t)).map(t=>{const total=qs.filter(q=>q.topic===t).length,good=qs.filter((q,i)=>q.topic===t&&session.answers[i]===q.a).length;return '<div class="practice-topic-result"><span>'+labels[t]+'</span><b>'+good+'/'+total+'</b></div>'}).join("")+'<div class="practice-actions" style="justify-content:center"><button class="practice-btn" id="practiceAgain">Latihan lagi</button></div></div><div><h3>Review pembahasan</h3>'+qs.map((q,i)=>'<div class="practice-feedback '+(session.answers[i]===q.a?"correct":"wrong")+'"><b>Soal '+(i+1)+' · '+(session.answers[i]===q.a?"Benar":"Perlu dipelajari")+'</b><p style="margin:7px 0;color:#43536e">'+q.why+'</p></div>').join("")+'</div>';
+  el("practiceAgain").onclick=start;session=null;
+ }
+ document.querySelectorAll(".practice-mode").forEach(b=>b.addEventListener("click",()=>{mode=b.dataset.mode;updateMode()}));
+ el("practiceStart").addEventListener("click",start);
+ paintStats();updateMode();
 })();
-
 </script>
 </body>
 </html>
