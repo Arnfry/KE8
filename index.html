@@ -924,6 +924,116 @@ body{
 @media(max-width:560px){.insight-wrap{width:calc(100% - 28px);margin:28px auto 50px}.insight-banner{padding:25px 21px}.insight-orbit{width:74px;height:74px;flex-basis:74px;font-size:.9rem}.insight-orbit i{font-size:1rem}.insight-kpis{gap:9px}.insight-kpis article{padding:14px}.insight-kpis strong{font-size:1.65rem}.insight-card{padding:17px}.insight-topics{grid-template-columns:1fr}.insight-week{gap:4px}.insight-week .insight-bar{width:25px}}
 @media(prefers-reduced-motion:reduce){.insight-meter span{transition:none}}
 
+
+
+/* ===== KE8 product refresh: editorial, calm, mobile-first ===== */
+:root{
+  --bg:#f3f6fb;
+  --panel:#ffffff;
+  --panel2:#eaf0f8;
+  --text:#192a43;
+  --muted:#64748b;
+  --line:#d7e0ed;
+  --accent:#4f6fae;
+  --accent2:#7892bd;
+  --deep:#294777;
+  --navy:#203b67;
+  --blue-soft:#e8eef8;
+  --shadow-soft:0 5px 18px rgba(32,59,103,.055);
+  --shadow-hover:0 12px 28px rgba(32,59,103,.10);
+}
+html{scroll-padding-top:100px}
+body{
+  background:var(--bg);
+  background-image:linear-gradient(rgba(41,71,119,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(41,71,119,.025) 1px,transparent 1px);
+  background-size:32px 32px;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  letter-spacing:-.008em;
+}
+.topbar{background:var(--navy);backdrop-filter:none;-webkit-backdrop-filter:none;border-bottom:1px solid rgba(255,255,255,.16);box-shadow:0 3px 12px rgba(22,42,75,.12)}
+.nav{min-height:68px;padding:12px 22px}
+.brand:before{content:none}
+.brand{font-size:.94rem;letter-spacing:.045em}
+.navlinks{gap:4px}
+.navlinks button{border-radius:6px;padding:9px 11px;font-size:.86rem;transition:background .16s ease,color .16s ease}
+.navlinks button:after{display:none}
+.navlinks button:hover,.navlinks button.active{background:rgba(255,255,255,.14);border-color:transparent}
+main{max-width:1180px;padding:32px 22px 64px}
+.page.active{animation:ke8PageIn .22s ease both}
+@keyframes ke8PageIn{from{opacity:.72;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+#home .hero{border-radius:16px;background:#fff;border-color:#d8e1ed;box-shadow:var(--shadow-soft);padding:clamp(22px,3vw,38px);min-height:370px}
+#home .hero-copy .kicker{border-radius:5px;background:#f4f7fc;letter-spacing:.09em}
+#home .hero h1{color:#243f6d;letter-spacing:-.065em;font-size:clamp(2.65rem,5.2vw,4.7rem)}
+#home .hero-art{border-radius:14px 14px 28px 14px;box-shadow:none;background:#edf3fb;border-color:#d1ddec}
+#home .quick-grid .card{border-radius:11px;box-shadow:0 3px 12px rgba(32,59,103,.045);min-height:165px}
+#home .quick-grid .card:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+.card,.road-col,.list,.syllabus-box,.year,.practice-stat,.practice-panel,.practice-config,.insight-kpis article,.insight-card{box-shadow:var(--shadow-soft)}
+.card,.year,.practice-mode,.node,.syllabus-topic,.insight-card,.insight-kpis article{border-radius:11px}
+.card:before{display:none}
+.section-head{margin-bottom:24px;padding-bottom:14px}
+.section-head:after{width:54px;height:2px}
+h2{font-size:clamp(1.55rem,3vw,2rem);letter-spacing:-.035em}
+p{line-height:1.68}
+.btn,.practice-btn{border-radius:7px;box-shadow:none;transition:background .16s ease,border-color .16s ease,transform .16s ease}
+.btn:hover,.practice-btn:hover{transform:translateY(-1px)}
+.search,.practice-config-grid select,.insight-target select{border-radius:7px}
+.road-col{border-radius:12px}
+.node{border-radius:8px}
+.node:after{content:none}
+.syllabus-topic{box-shadow:none}
+.syllabus-topic summary{background:#f1f5fb}
+.year{background:#fff}
+.practice-hero{border-radius:13px;background:linear-gradient(115deg,#243f6d,#3d6096);box-shadow:none}
+.practice-stat,.practice-config,.practice-panel{border-radius:11px}
+.practice-mode{border-radius:9px;box-shadow:none}
+.practice-mode:hover,.practice-mode.active{transform:translateY(-1px);box-shadow:0 4px 12px rgba(32,59,103,.07)}
+.practice-option{border-radius:8px}
+.insight-wrap{margin-top:30px}
+.insight-banner{border-radius:14px;background:#294777;padding:clamp(22px,3vw,32px)}
+.insight-banner:after{opacity:.45}
+.insight-kpis article,.insight-card{border-color:var(--line);border-radius:11px;box-shadow:var(--shadow-soft)}
+.insight-kpis article{padding:17px}
+.insight-card{padding:20px}
+.insight-chip{border-radius:5px}
+.insight-topic{border-radius:8px}
+.insight-meter span{background:#5879ad}
+.insight-export{border-radius:7px}
+.footer{max-width:1180px;margin-left:auto;margin-right:auto}
+:where(button,a,input,select,summary,[tabindex]):focus-visible{outline:3px solid rgba(79,111,174,.48);outline-offset:3px}
+button:disabled{cursor:not-allowed}
+@media(max-width:900px){
+  .nav{gap:8px}
+  main{padding:24px 16px 52px}
+  #home .hero{grid-template-columns:minmax(0,1fr) minmax(220px,.72fr)}
+}
+@media(max-width:650px){
+  .nav{padding:10px 12px}
+  .brand{font-size:.85rem}
+  main{padding:18px 12px 42px}
+  #home .hero{grid-template-columns:1fr;padding:20px 16px;border-radius:12px}
+  #home .hero h1{font-size:clamp(2.35rem,11vw,3.35rem)}
+  #home .hero-art{min-height:210px}
+  #home .quick-grid .card{border-radius:9px}
+  .insight-banner{border-radius:11px;gap:12px}
+  .insight-card{padding:15px}
+  .practice-hero{border-radius:11px}
+  .practice-question-nav{align-items:stretch}
+  .practice-question-nav .practice-btn{flex:1}
+}
+@media(max-width:380px){
+  .brand{font-size:.78rem}
+  .navlinks button{font-size:.75rem;padding:8px 9px}
+  #home .hero h1{font-size:2.2rem}
+  .insight-kpis strong{font-size:1.45rem}
+  .insight-week{gap:2px}
+  .insight-week .insight-bar{width:20px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .page.active{animation:none}
+  *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
+}
+
 </style>
 </head>
 <body>
@@ -1462,6 +1572,7 @@ function go(page, updateHash=true){
   const nav=document.querySelector('[data-page="'+page+'"]');
   if(nav) nav.classList.add("active");
   if(updateHash && location.hash !== "#"+page) history.replaceState(null,"","#"+page);
+  if(page==="insight" && typeof window.renderKE8Insight==="function") window.renderKE8Insight();
   window.scrollTo({top:0,behavior:"smooth"});
 }
 document.querySelectorAll(".navlinks button").forEach(btn=>{
@@ -1683,12 +1794,19 @@ function filterList(input,id){
   const writeHistory=x=>{try{localStorage.setItem(historyKey,JSON.stringify(x.slice(-180)))}catch(e){}};
   const dateKey=d=>{const x=new Date(d);return x.getFullYear()+"-"+String(x.getMonth()+1).padStart(2,"0")+"-"+String(x.getDate()).padStart(2,"0")};
   const topicNames={micro:"Mikroekonomi",macro:"Makroekonomi",international:"Ekonomi Internasional",finance:"Moneter & Keuangan",development:"Pembangunan & Kebijakan"};
+  function readDailyGoal(){
+   try{const value=Number(localStorage.getItem("ke8DailyGoal")||10);return [5,10,15,20,30].includes(value)?value:10}catch(e){return 10}
+  }
+  function saveDailyGoal(value){
+   const goal=Number(value);if(![5,10,15,20,30].includes(goal))return false;
+   try{localStorage.setItem("ke8DailyGoal",String(goal));return true}catch(e){showToast("Penyimpanan target tidak tersedia di browser ini.");return false}
+  }
   function renderInsight(){
    const stats=safeStats(),history=readHistory(),today=dateKey(new Date());
    const total=history.reduce((n,x)=>n+x.total,0),right=history.reduce((n,x)=>n+x.correct,0),avg=history.length?Math.round(history.reduce((n,x)=>n+x.score,0)/history.length):0;
    const days=new Set(history.map(x=>x.date));let streak=0,d=new Date();if(!days.has(dateKey(d)))d.setDate(d.getDate()-1);
    while(days.has(dateKey(d))&&streak<365){streak++;d.setDate(d.getDate()-1)}
-   const todayCount=history.filter(x=>x.date===today).reduce((n,x)=>n+x.total,0),goal=Number(localStorage.getItem("ke8DailyGoal")||10);
+   const todayCount=history.filter(x=>x.date===today).reduce((n,x)=>n+x.total,0),goal=readDailyGoal();
    el("ilQuestions").textContent=stats.answered||total;el("ilAccuracy").textContent=(stats.answered?Math.round(stats.correct/stats.answered*100):total?Math.round(right/total*100):0)+"%";el("ilStreak").textContent=streak+" hari";el("ilAverage").textContent=history.length?avg+"%":"—";
    const week=Array.from({length:7},(_,i)=>{const dt=new Date();dt.setDate(dt.getDate()-(6-i));const keyDate=dateKey(dt);return {date:keyDate,label:["Min","Sen","Sel","Rab","Kam","Jum","Sab"][dt.getDay()],count:history.filter(x=>x.date===keyDate).reduce((n,x)=>n+x.total,0)}});
    const max=Math.max(1,...week.map(x=>x.count));el("ilWeek").innerHTML=week.map(x=>'<div class="insight-day"><div class="insight-bar" style="--bar:'+Math.max(4,x.count/max*100)+'%"><em>'+x.count+'</em></div><small>'+x.label+'</small></div>').join("");
@@ -1706,11 +1824,12 @@ function filterList(input,id){
    el("ilRecent").innerHTML=history.length?history.slice(-5).reverse().map(x=>'<div class="insight-recent-row"><span>'+modeNames[x.mode]+' · '+x.total+' soal</span><b>'+x.score+'%</b><small>'+new Date(x.at).toLocaleString("id-ID",{dateStyle:"medium",timeStyle:"short"})+'</small></div>').join(""):'<p>Belum ada sesi baru yang terekam. Riwayat akan muncul setelah kamu menyelesaikan latihan.</p>';
 
   }
-  el("ilGoal").addEventListener("change",e=>{localStorage.setItem("ke8DailyGoal",e.target.value);renderInsight()});
+  window.renderKE8Insight=renderInsight;
+  el("ilGoal").addEventListener("change",e=>{if(saveDailyGoal(e.target.value))renderInsight();else e.target.value=String(readDailyGoal())});
   el("ilExport").addEventListener("click",()=>{
-   const payload={app:"KE8 OSN Insight Lab",exportedAt:new Date().toISOString(),stats:safeStats(),history:readHistory(),dailyGoal:Number(localStorage.getItem("ke8DailyGoal")||10)};
+   const payload={app:"KE8 OSN Insight Lab",exportedAt:new Date().toISOString(),stats:safeStats(),history:readHistory(),dailyGoal:readDailyGoal()};
    const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");
-   a.href=url;a.download="KE8-progress-backup-"+dateKey(new Date())+".json";document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+   a.href=url;a.download="KE8-progress-backup-"+dateKey(new Date())+".json";document.body.appendChild(a);a.click();a.remove();window.setTimeout(()=>URL.revokeObjectURL(url),1000);
    showToast("Backup progres berhasil disiapkan.");
   });
 
