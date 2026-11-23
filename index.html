@@ -1034,6 +1034,38 @@ button:disabled{cursor:not-allowed}
   *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
 }
 
+
+/* ECC-inspired Review Desk */
+.review-wrap{max-width:1080px;margin:0 auto}
+.review-hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);gap:24px;align-items:center;padding:clamp(22px,3.5vw,38px);border:1px solid var(--line);border-radius:15px;background:linear-gradient(120deg,#fff,#eaf0f8);box-shadow:var(--shadow-soft)}
+.review-eyebrow{font-size:.68rem;font-weight:900;letter-spacing:.13em;color:var(--accent)}
+.review-hero h2{margin:9px 0;font-size:clamp(1.7rem,4vw,2.5rem);letter-spacing:-.045em}.review-hero p{max-width:620px;margin:0}
+.review-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}
+.review-primary,.review-secondary,.review-card button{min-height:42px;padding:10px 14px;border-radius:7px;font:inherit;font-size:.86rem;font-weight:800;cursor:pointer}
+.review-primary{border:1px solid var(--deep);background:var(--deep);color:#fff}.review-secondary{border:1px solid var(--line);background:#fff;color:var(--deep)}
+.review-primary:hover{background:#203b67}.review-secondary:hover{border-color:var(--accent);background:#f5f8fd}
+.review-scoreboard{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.review-scoreboard div{padding:15px 11px;border:1px solid var(--line);border-radius:9px;background:rgba(255,255,255,.82)}
+.review-scoreboard small{display:block;color:var(--muted);font-size:.72rem;line-height:1.4}.review-scoreboard strong{display:block;margin-top:6px;color:var(--deep);font-size:1.8rem;font-variant-numeric:tabular-nums}
+.review-recommendation{display:flex;justify-content:space-between;align-items:center;gap:18px;margin:16px 0;padding:18px 20px;border-left:3px solid var(--accent);border-radius:8px;background:#eaf0f8}
+.review-recommendation h3{margin:5px 0;color:var(--deep)}.review-recommendation p{margin:0;font-size:.88rem}
+.review-toolbar{display:grid;grid-template-columns:auto minmax(180px,1fr) auto minmax(160px,.45fr);gap:10px;align-items:center;margin:24px 0 14px}
+.review-toolbar label{font-size:.8rem;font-weight:850;color:var(--deep)}.review-toolbar input,.review-toolbar select{width:100%;min-height:44px;padding:10px 12px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--text);font:inherit;font-size:16px}
+.review-list{display:grid;gap:12px}.review-card{padding:19px;border:1px solid var(--line);border-radius:11px;background:#fff;box-shadow:var(--shadow-soft)}
+.review-card-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.review-card h3{margin:7px 0;color:var(--deep)}
+.review-meta{display:flex;gap:6px;flex-wrap:wrap}.review-meta span{padding:5px 8px;border-radius:4px;background:#eaf0f8;color:var(--deep);font-size:.68rem;font-weight:850}
+.review-status{font-size:.7rem;font-weight:850;color:var(--muted);white-space:nowrap}.review-case{padding:12px 14px;margin:12px 0;border-radius:7px;background:#f4f7fb;color:#465873;font-size:.88rem;line-height:1.65}
+.review-question{color:var(--text);font-weight:800;line-height:1.6}.review-options{display:grid;gap:6px;margin:12px 0}
+.review-option{padding:9px 11px;border:1px solid var(--line);border-radius:6px;color:var(--muted);font-size:.86rem;line-height:1.5}
+.review-option.correct{border-color:#9bb8a8;background:#edf5f0;color:#315d48;font-weight:750}.review-option.chosen:not(.correct){border-color:#d5a2a8;background:#fbf0f1;color:#87434b}
+.review-explanation{padding:13px 14px;border-left:3px solid var(--green);background:#f3f7f4;border-radius:5px;color:#405b4c;font-size:.88rem;line-height:1.65}
+.review-card-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.review-card button{border:1px solid var(--line);background:#fff;color:var(--deep)}
+.review-card button[data-review-action="master"]{background:var(--deep);border-color:var(--deep);color:#fff}
+.review-empty{padding:35px 20px;border:1px dashed var(--line);border-radius:10px;text-align:center;background:rgba(255,255,255,.65)}
+.review-empty h3{color:var(--deep)}.review-empty p{max-width:500px;margin:8px auto 0}.review-footnote{margin-top:18px;font-size:.78rem}
+@media(max-width:760px){.review-hero{grid-template-columns:1fr}.review-scoreboard{max-width:520px}.review-toolbar{grid-template-columns:1fr 1fr}.review-toolbar label{align-self:end}.review-recommendation{align-items:flex-start;flex-direction:column}.review-recommendation button{width:100%}}
+@media(max-width:480px){.review-hero{padding:19px 15px}.review-scoreboard{gap:6px}.review-scoreboard div{padding:12px 8px}.review-scoreboard strong{font-size:1.45rem}.review-toolbar{grid-template-columns:1fr;gap:6px}.review-toolbar label{margin-top:8px}.review-card{padding:14px}.review-card-head{flex-direction:column}.review-card-actions button{flex:1}}
+@media(prefers-reduced-motion:reduce){.review-card,.review-primary,.review-secondary{transition:none}}
+
 </style>
 </head>
 <body>
@@ -1049,6 +1081,7 @@ button:disabled{cursor:not-allowed}
       <button data-page="archive">Arsip Soal</button>
       <button data-page="practice">Practice Arena</button>
       <button data-page="insight">Insight Lab</button>
+      <button data-page="review">Review Desk</button>
     </div>
   </nav>
 </header>
@@ -1098,6 +1131,7 @@ button:disabled{cursor:not-allowed}
       <h3>Arsip Soal</h3>
       <p>Kumpulan arsip OSK, OSP, OSN, dan tryout berdasarkan tahun.</p>
     </div>
+    <div class="card" onclick="go('review')"><div class="icon" aria-hidden="true">↺</div><h3>Review Desk</h3><p>Catat jawaban yang keliru, ulangi pembahasan, dan tandai materi yang sudah dikuasai.</p></div>
   </div>
 </section>
 
@@ -1475,6 +1509,19 @@ button:disabled{cursor:not-allowed}
  </div>
 </section>
 
+<section id="review" class="page">
+<div class="review-wrap">
+ <div class="section-head"><div><div class="kicker">KE8 • ACTIVE RECALL SYSTEM</div><h2>Review Desk</h2><p>Kesalahan latihan tidak hilang begitu saja. Simpan, tinjau kembali, dan bangun penguasaan materi secara bertahap.</p></div></div>
+ <div class="review-hero"><div><span class="review-eyebrow">YOUR PERSONAL MISTAKE NOTEBOOK</span><h2>Belajar dari pola kesalahan.</h2><p>Setiap jawaban yang belum tepat dari Practice Arena akan masuk ke sini secara otomatis. Data tersimpan lokal di perangkatmu.</p><div class="review-actions"><button class="review-primary" onclick="go('practice')">Kembali ke Practice Arena →</button><button class="review-secondary" id="reviewExport">Unduh catatan</button></div></div>
+  <div class="review-scoreboard"><div><small>Belum dikuasai</small><strong id="reviewActiveCount">0</strong></div><div><small>Perlu ditinjau</small><strong id="reviewDueCount">0</strong></div><div><small>Dikuasai</small><strong id="reviewMasteredCount">0</strong></div></div>
+ </div>
+ <div class="review-recommendation"><div><span class="review-eyebrow">NEXT BEST ACTION</span><h3 id="reviewNextTitle">Mulai bangun baseline kemampuanmu.</h3><p id="reviewNextText">Selesaikan satu sesi latihan agar KE8 dapat menemukan bidang yang perlu diprioritaskan.</p></div><button class="review-secondary" id="reviewNextAction">Latihan terarah →</button></div>
+ <div class="review-toolbar"><label for="reviewSearch">Cari catatan</label><input id="reviewSearch" type="search" placeholder="Cari topik, soal, atau konsep..." autocomplete="off"><label for="reviewFilter">Tampilkan</label><select id="reviewFilter"><option value="due">Perlu ditinjau</option><option value="all">Semua belum dikuasai</option><option value="scheduled">Dijadwalkan nanti</option><option value="mastered">Sudah dikuasai</option></select></div>
+ <div id="reviewList" class="review-list" aria-live="polite"></div>
+ <p class="review-footnote">Catatan review disimpan menggunakan localStorage pada browser ini. Menghapus data situs atau berpindah perangkat dapat menghilangkan catatan; gunakan fitur unduh untuk menyimpan salinan.</p>
+</div>
+</section>
+
 <footer class="footer">
   <strong>TIM OSN EKONOMI SMADELTA</strong> • Belajar terstruktur, berlatih konsisten, berkembang bersama.
 </footer>
@@ -1784,6 +1831,7 @@ function filterList(input,id){
   const history=readHistory();history.push({date:dateKey(new Date()),at:Date.now(),total:qs.length,correct,score,mode:session.mode,topics:topicBreakdown});writeHistory(history);
   const duration=Math.round((Date.now()-session.started)/1000);
   const missed=qs.filter((q,i)=>session.answers[i]!==q.a);
+  if(window.KE8ReviewBook)window.KE8ReviewBook.capture(missed.map(q=>({question:q,chosen:session.answers[qs.indexOf(q)]})));
   el("practiceStage").innerHTML='<div class="practice-result"><div class="kicker">SESSION REPORT</div><div class="practice-result-score">'+score+'%</div><p>'+correct+' dari '+qs.length+' jawaban benar · '+formatTime(duration)+' waktu pengerjaan</p><div class="practice-result-grid"><div><strong>'+correct+'</strong><span class="practice-muted">Benar</span></div><div><strong>'+missed.length+'</strong><span class="practice-muted">Perlu ditinjau</span></div><div><strong>'+levelLabels[qs.reduce((best,q)=>["basic","intermediate","advanced","olympiad"].indexOf(q.level)>["basic","intermediate","advanced","olympiad"].indexOf(best)?q.level:best,"basic")]+'</strong><span class="practice-muted">Level tertinggi</span></div></div><h3>Evaluasi per bidang</h3>'+Object.keys(labels).filter(t=>qs.some(q=>q.topic===t)).map(t=>{const total=qs.filter(q=>q.topic===t).length,good=qs.filter((q,i)=>q.topic===t&&session.answers[i]===q.a).length;return '<div class="practice-topic-result"><span>'+labels[t]+'</span><b>'+good+'/'+total+'</b></div>'}).join("")+'<div class="practice-actions" style="justify-content:center"><button class="practice-btn" id="practiceAgain">Latihan lagi</button></div></div><div><h3>Review pembahasan</h3>'+qs.map((q,i)=>'<div class="practice-feedback '+(session.answers[i]===q.a?"correct":"wrong")+'"><b>Soal '+(i+1)+' · '+(session.answers[i]===q.a?"Benar":"Perlu dipelajari")+'</b><p style="margin:7px 0;color:#43536e">'+q.why+'</p></div>').join("")+'</div>';
   const finishedId=session.id;el("practiceAgain").onclick=()=>{if(session&&session.id===finishedId)return;start()};session=null;
  }
@@ -1838,5 +1886,26 @@ function filterList(input,id){
  paintStats();updateMode();
 })();
 </script>
+<script>
+(function(){
+"use strict";
+const KEY="ke8ReviewBookV1",topics={micro:"Mikroekonomi",macro:"Makroekonomi",international:"Ekonomi Internasional",finance:"Moneter & Keuangan",development:"Pembangunan & Kebijakan"},levels={basic:"Fundamental",intermediate:"Intermediate",advanced:"Advanced",olympiad:"Olympiad"};
+const el=id=>document.getElementById(id),now=()=>Date.now(),esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function read(){try{const v=JSON.parse(localStorage.getItem(KEY)||"[]");return Array.isArray(v)?v.filter(x=>x&&typeof x.id==="string"&&Array.isArray(x.options)):[]}catch(e){return[]}}
+function write(a){try{localStorage.setItem(KEY,JSON.stringify(a.slice(-150)));return true}catch(e){if(typeof showToast==="function")showToast("Penyimpanan Review Desk tidak tersedia.");return false}}
+function capture(entries){const saved=read(),stamp=now();entries.forEach(({question:q,chosen})=>{if(!q||!q.id)return;const old=saved.find(x=>x.id===q.id),row={id:String(q.id),topic:String(q.topic),level:String(q.level),title:String(q.title),caseText:String(q.case),prompt:String(q.q),options:Array.isArray(q.o)?q.o.map(String):[],answer:Number(q.a),explanation:String(q.why),chosen:Number.isInteger(chosen)?chosen:null,missedCount:(old?.missedCount||0)+1,createdAt:old?.createdAt||stamp,lastMissedAt:stamp,dueAt:stamp,status:"due",masteredAt:null};const i=saved.findIndex(x=>x.id===row.id);if(i>=0)saved[i]=row;else saved.push(row)});write(saved);render()}
+const state=(x,t)=>x.status==="mastered"?"mastered":Number(x.dueAt||0)<=t?"due":"scheduled";
+function recommend(){let s={};try{s=JSON.parse(localStorage.getItem("ke8PracticeStatsV2")||"{}")||{}}catch(e){}const c=Object.entries(s.topics||{}).filter(([,v])=>v&&v.answered>=3);c.sort((a,b)=>(a[1].correct/a[1].answered)-(b[1].correct/b[1].answered));const w=c[0],b=el("reviewNextAction");if(w){const [topic,v]=w;el("reviewNextTitle").textContent="Perkuat "+(topics[topic]||topic)+".";el("reviewNextText").textContent="Akurasi bidang ini "+Math.round(v.correct/v.answered*100)+"% dari "+v.answered+" jawaban. Kerjakan latihan terarah untuk memperkuat konsep yang belum stabil.";b.dataset.topic=topic}else{el("reviewNextTitle").textContent="Bangun baseline kemampuanmu.";el("reviewNextText").textContent="Belum ada sampel yang cukup untuk menentukan bidang terlemah. Mulai dengan latihan terarah dari beberapa topik.";b.dataset.topic="micro"}}
+function render(){const a=read(),t=now(),active=a.filter(x=>x.status!=="mastered"),due=active.filter(x=>state(x,t)==="due"),mastered=a.filter(x=>x.status==="mastered");el("reviewActiveCount").textContent=active.length;el("reviewDueCount").textContent=due.length;el("reviewMasteredCount").textContent=mastered.length;recommend();const f=el("reviewFilter").value,q=el("reviewSearch").value.trim().toLocaleLowerCase("id-ID");const shown=a.filter(x=>{const st=state(x,t),ok=f==="all"?st!=="mastered":st===f,hay=[x.title,x.topic,x.level,x.prompt,x.caseText,x.explanation].join(" ").toLocaleLowerCase("id-ID");return ok&&(!q||hay.includes(q))}).sort((x,y)=>(x.dueAt||0)-(y.dueAt||0));const list=el("reviewList");if(!shown.length){const title=f==="mastered"?"Belum ada materi yang ditandai dikuasai.":f==="scheduled"?"Tidak ada review yang dijadwalkan nanti.":"Belum ada catatan yang perlu ditinjau.";list.innerHTML='<div class="review-empty"><h3>'+esc(title)+'</h3><p>Kerjakan Practice Arena. Jawaban yang keliru atau terlewat akan otomatis dicatat di sini bersama pembahasannya.</p><button class="review-primary" onclick="go(&quot;practice&quot;)">Mulai latihan →</button></div>';return}
+list.innerHTML=shown.map(x=>{const st=state(x,t),label=st==="mastered"?"Dikuasai":st==="scheduled"?"Dijadwalkan":"Perlu ditinjau",opts=x.options.map((v,i)=>{const cls=["review-option"];if(i===x.answer)cls.push("correct");if(i===x.chosen&&i!==x.answer)cls.push("chosen");const suffix=i===x.answer?" · Jawaban benar":i===x.chosen?" · Jawabanmu":"";return '<div class="'+cls.join(" ")+'"><b>'+String.fromCharCode(65+i)+'.</b> '+esc(v+suffix)+'</div>'}).join(""),actions=st==="mastered"?"":st==="scheduled"?'<button data-review-action="due" data-review-id="'+esc(x.id)+'">Tinjau sekarang</button>':'<button data-review-action="snooze" data-review-id="'+esc(x.id)+'">Tunda 1 hari</button><button data-review-action="master" data-review-id="'+esc(x.id)+'">Saya sudah menguasai</button>';return '<article class="review-card"><div class="review-card-head"><div><div class="review-meta"><span>'+esc(topics[x.topic]||x.topic)+'</span><span>'+esc(levels[x.level]||x.level)+'</span><span>'+Number(x.missedCount||1)+'× keliru</span></div><h3>'+esc(x.title)+'</h3></div><span class="review-status">'+label+'</span></div><div class="review-case">'+esc(x.caseText)+'</div><p class="review-question">'+esc(x.prompt)+'</p><div class="review-options">'+opts+'</div><div class="review-explanation"><b>Inti pembahasan:</b> '+esc(x.explanation)+'</div><div class="review-card-actions">'+actions+'</div></article>'}).join("")}
+function update(id,action){const a=read(),x=a.find(v=>v.id===id);if(!x)return;if(action==="master"){x.status="mastered";x.masteredAt=now()}else if(action==="snooze"){x.status="scheduled";x.dueAt=now()+86400000}else if(action==="due"){x.status="due";x.dueAt=now()}write(a);render()}
+function startTopic(topic){go("practice");const mode=document.querySelector('.practice-mode[data-mode="topic"]');if(mode)mode.click();el("practiceTopic").value=topic;el("practiceLevel").value="all";el("practiceCount").value="10";el("practiceStart").click()}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-review-action]");if(b)update(b.dataset.reviewId,b.dataset.reviewAction)});
+el("reviewSearch").addEventListener("input",render);el("reviewFilter").addEventListener("change",render);el("reviewNextAction").addEventListener("click",e=>startTopic(e.currentTarget.dataset.topic||"micro"));
+el("reviewExport").addEventListener("click",()=>{const data={app:"KE8 Review Desk",exportedAt:new Date().toISOString(),items:read()},blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="KE8-review-notebook-"+new Date().toISOString().slice(0,10)+".json";document.body.appendChild(a);a.click();a.remove();window.setTimeout(()=>URL.revokeObjectURL(url),1000);if(typeof showToast==="function")showToast("Backup Review Desk berhasil disiapkan.")});
+const previousGo=window.go;window.go=function(page,...args){previousGo(page,...args);if(page==="review")render()};window.KE8ReviewBook={capture,render};render();
+})();
+</script>
+
 </body>
 </html>
